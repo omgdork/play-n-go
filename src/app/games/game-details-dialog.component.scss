@@ -1,0 +1,48 @@
+.game-details-dialog {
+  .game-preview, .game-details {
+    box-sizing: border-box;
+    float: left;
+  }
+
+  .game-preview {
+    width: 60%;
+
+    img {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  .game-details {
+    padding: 0 0 0 10px;
+    width: 40%;
+
+    h1 {
+      margin-top: 0;
+    }
+
+    .game-regulator {
+      background: url(http://www.playngo.com/images/spritesheets/regulators.87a3e47d.png);
+      display: inline-block;
+      height: 43px;
+      margin: 0 10px 0 0;
+      width: 100px;
+
+      &.aams {
+        background-position: 0 0;
+      }
+
+      &.agcc {
+        background-position: 0 -43px;
+      }
+
+      &.lga {
+        background-position: 0 -86px;
+      }
+
+      &.ukgc {
+        background-position: 0 -129px;
+      }
+    }
+  }
+}

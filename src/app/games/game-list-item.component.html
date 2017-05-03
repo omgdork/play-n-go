@@ -1,0 +1,9 @@
+<md-card class="game-card">
+  <md-card-header>
+    <md-card-title>{{game.name}}</md-card-title>
+  </md-card-header>
+  <img md-card-image [src]="game.previewImg">
+  <md-card-content>
+    <small class="game-tags">{{game.gameTagsToString()}}</small>
+  </md-card-content>
+</md-card>

@@ -14,6 +14,10 @@ import {
   RouterModule,
   PreloadAllModules
 } from '@angular/router';
+import 'hammerjs';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MaterialModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -26,6 +30,9 @@ import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
 import { AboutComponent } from './about';
+import { GameListComponent } from './games';
+import { GameListItemComponent } from './games/game-list-item.component';
+import { GameDetailsDialogComponent } from './games/game-details-dialog.component';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
 
@@ -53,14 +60,21 @@ type StoreType = {
     AppComponent,
     AboutComponent,
     HomeComponent,
+    GameListComponent,
+    GameListItemComponent,
+    GameDetailsDialogComponent,
     NoContentComponent,
     XLargeDirective
   ],
+  entryComponents: [GameDetailsDialogComponent],
   imports: [ // import Angular's modules
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
+    FlexLayoutModule,
+    MaterialModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
